@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/form.css">
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total() {
+           var qtd = parseInt(document.getElementById('nQtd').value);
+           tot = qtd* 1500;
+           document.getElementById('oTot').value = tot;
+        }
+    </script>    
+    <title>Tudo sobre o google glass</title>
+</head>
+
+
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+        <hgroup>
+        <h1>Google Glass</h1>
+        <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/contato.png" alt=""/>
+
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul>
+            <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a> </li>
+            <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+            <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+            <li onmousemove="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+            <li onmousemove="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="corpo-full">
+        <article id="noticia-principal">
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h3>Fale Conosco > Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>Por Rhauan Santana</h2>
+                    <h3 class="datadir">Atualizado em 01/Maio/2013</h3>
+                </hgroup>
+         </header>
+
+                    <form method="post" id="tContato" action="mailto:rhauanw12@gmail.com" oninput="calc_total();">
+
+                        <fieldset id="usuario">
+                            <legend>Identificação do Usuário</legend>
+                                <p><label for="aNome">Nome:</label><input type="text" name="txtNome" id="aNome" size="25" maxlength="30" placeholder="Nome completo"></p>
+                                <p><label for="bSenha">Senha:</label><input type="password" name="txtSenha" id="bSenha" size="25" maxlength="8" placeholder="8 dígitos"></p>
+                                <p><label for="cEmail">E-mail:</label><input type="email" name="txtEmail" id="cEmail" size="25" maxlength="30" placeholder="Insira um e-mail válido"></p>
+
+                        <fieldset id="Sexo">
+                            <legend>Sexo:</legend>
+                                <input type="radio" name="txtSexo" id="sMasc"> <label for="sMasc">Masculino</label><br>
+                                <input type="radio" name="txtSexo" id="sFem"> <label for="sFem">Feminino</label> 
+                        </fieldset>    
+                                <p>Data de Nascimento:<input type="date" name="txtData" id="dData" size="25"></p>
+
+                        </fieldset>
+
+                        <fieldset id="endereco">
+                            <legend>Endereço do Usuário</legend>
+                            <p><label for="eEnder">Logradouro:</label> <input type="text" name="txtEnder" id="eEnder" size="13" maxlength="80" placeholder="Rua, Av, Travessa..."></p>
+                            <p><label for="fNum">Número:</label><input type="number" name="txtNum" id="fNum" min="0" max="99999"></p>
+                            <p><label for="gEst">Estado: <select name="txtEst" id="gEst"><optgroup label="Centro-Oeste">
+                                    <option>Distrito Federal</option>
+                                    <option>Goiás</option>
+                                    <option>Mato Grosso</option>
+                                    <option>Mato Grosso do Sul</option>   
+                                 </optgroup>
+
+                                 <optgroup label="Nordeste">
+                                    <option>Alagoas</option>
+                                    <option>Bahia</option>
+                                    <option>Ceará</option>
+                                    <option>Maranhão</option>
+                                    <option>Paraíba</option>
+                                    <option>Pernambuco</option>
+                                    <option>Piauí</option>
+                                    <option>Rio Grande do Norte</option>
+                                    <option>Sergipe</option>   
+                                 </optgroup>
+
+                                 <optgroup label="Norte">
+                                    <option>Acre</option>
+                                    <option>Amapá</option>
+                                    <option>Amazonas</option>
+                                    <option>Pará</option>
+                                    <option>Rondônia</option>
+                                    <option>Roraima</option>
+                                    <option>Tocantins</option>   
+                                 </optgroup>
+
+                                 <optgroup label="Sudeste">
+                                    <option>Espírito Santo</option>
+                                    <option>Minas Gerais</option>
+                                    <option>Rio de Janeiro</option>
+                                    <option>São Paulo</option>   
+                                 </optgroup>
+
+                                 <optgroup label="Sul">
+                                    <option>Paraná</option>
+                                    <option>Rio Grande do Sul</option>
+                                    <option>Santa Catarina</option>  
+                                 </optgroup>
+                                 </select>
+                                <p><label for="hCid">Cidade:<input type="text" id="hCid" maxlength="40" size="20" placeholder="Onde reside"></label></p>
+                                <datalist id="cidades">
+                                    <option value="Rio de Janeiro"></option>
+                                </datalist>
+                        </fieldset>
+
+                        <fieldset id="mensagem">
+                            <legend>Mensagem do Usuário</legend>
+
+                            <textarea name="txtMsg" id="jMsg" cols="65" rows="10" placeholder="Deixe aqui sua observação"></textarea>
+                        </fieldset>
+
+
+                        <fieldset id="pedido">
+                            <legend>Quero um Google Glass</legend>
+                            <p><input type="checkbox" name="txtPed" id="kPed"><label for="kPed">Gostaria de adquirir um Google Glass quando disponível</label> </p>
+                            <p><label for="mCor">Cor:</label> <input type="color"></p>
+                            <p><label for="nQtd">Quantidade:</label><input type="number" name="txtQtd" id="nQtd" min="0" max="5"></p>
+                            <p><label for="oTot">Preço Total: R$</label> <input type="text" name="txtTot" id="oTot" placeholder="Total a ser pago" readonly></p>
+                        </fieldset>
+                    
+                        <input type="image" name="pEnv" src="_imagens/botao-enviar.png">
+                    </form>
+
+<footer id="rodape">
+    <p>Copyright &copy; 2024 - by Rhauan Santana <br>
+        <a href="https://www.instagram.com/rh_fabris/" target="_blank"> Instagram </a> | <a href="https://www.linkedin.com/in/rhauan-fabris-634958203/" target="_blank"> LinkedIn</a> </p>
+</footer>
